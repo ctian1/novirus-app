@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMotionUsageDescription</key>
+	<string>Motion tracking is used to reduce battery use</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location tracking is required</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Background tracking is required</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -37,8 +43,6 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

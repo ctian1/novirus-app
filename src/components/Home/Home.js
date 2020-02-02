@@ -15,6 +15,7 @@ import TextStyles from 'helpers/TextStyles';
 import strings from 'localization';
 import getUser from 'selectors/UserSelectors';
 import { ScrollView } from 'react-native-gesture-handler';
+import Colors from 'helpers/Colors';
 
 function Home(props) {
 
@@ -100,7 +101,9 @@ function Home(props) {
 Home.navigationOptions = ({ navigation }) => ({
     // title: typeof(navigation),
     title: typeof(navigation)==='undefined' || typeof(navigation.state)==='undefined' || typeof(navigation.state.params)==='undefined' || typeof(navigation.state.params.virus) === 'undefined' ? 'Novirus': navigation.state.params.virus.title,
-    headerBackTitle: 'Back'
+    headerBackTitle: 'Back',
+    headerStyle: {paddingBottom: 12},
+    headerTitleStyle: {fontSize: 32, fontWeight: '700', color: Colors.primary}
 });
 
 Home.propTypes = {

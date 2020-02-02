@@ -29,7 +29,7 @@ function Profile(props) {
     <View style={styles.container}>
       <Text style={TextStyles.fieldTitle}> {strings.profile} </Text>
       <Text>
-        {strings.profileMessage}
+        {user.name}
       </Text>
       <Button
         title={strings.logout}

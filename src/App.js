@@ -5,6 +5,7 @@ import Navigation from './components/navigation';
 import Colors from './helpers/Colors';
 import { store, persist } from './reducers';
 // import MapboxGL from "@react-native-mapbox-gl/maps";
+    // BackgroundGeolocation.onLocation(this.onLocation, this.onError);
 
 // MapboxGL.setAccessToken("sk.eyJ1IjoiY3RpYW4xIiwiYSI6ImNrNjNmM3RvMDA1bzkzbmx3emlreHYzaWQifQ.WcM2--jYUE1eHlj9UtXMTA");
 

@@ -1,5 +1,8 @@
 PODS:
   - boost-for-react-native (1.63.0)
+  - CocoaLumberjack (3.5.3):
+    - CocoaLumberjack/Core (= 3.5.3)
+  - CocoaLumberjack/Core (3.5.3)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.61.2)
   - FBReactNativeSpec (0.61.2):
@@ -246,6 +249,11 @@ PODS:
     - ReactCommon/jscallinvoker (= 0.61.2)
   - ReactNativeLocalization (2.1.6):
     - React
+  - RNBackgroundFetch (2.7.1):
+    - React
+  - RNBackgroundGeolocation (3.4.2):
+    - CocoaLumberjack (~> 3.5.1)
+    - React
   - RNCAsyncStorage (1.6.2):
     - React
   - RNGestureHandler (1.4.1):
@@ -291,6 +299,8 @@ DEPENDENCIES:
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeLocalization (from `../node_modules/react-native-localization`)
+  - RNBackgroundFetch (from `../node_modules/react-native-background-fetch`)
+  - RNBackgroundGeolocation (from `../node_modules/react-native-background-geolocation`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
@@ -301,6 +311,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - CocoaLumberjack
     - Google-Maps-iOS-Utils
     - GoogleMaps
 
@@ -359,6 +370,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeLocalization:
     :path: "../node_modules/react-native-localization"
+  RNBackgroundFetch:
+    :path: "../node_modules/react-native-background-fetch"
+  RNBackgroundGeolocation:
+    :path: "../node_modules/react-native-background-geolocation"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage"
   RNGestureHandler:
@@ -374,6 +389,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   FBLazyVector: 68b6a76960fbd8ecd9fb7ce0aadd3329c3340a99
   FBReactNativeSpec: 5a764c60abdc3336a213e5310c40b74741f32839
@@ -403,6 +419,8 @@ SPEC CHECKSUMS:
   React-RCTVibration: fb54c732fd20405a76598e431aa2f8c2bf527de9
   ReactCommon: 5848032ed2f274fcb40f6b9ec24067787c42d479
   ReactNativeLocalization: 9abfb1717d6c6f2e3a4e444c4402d52acbf784cc
+  RNBackgroundFetch: 08bdaaa13a5aa71cdce42068def5602ed1e982c2
+  RNBackgroundGeolocation: 0ece4eb8306b1e0acc7571fa9394d71bfa42a53b
   RNCAsyncStorage: 5ae4d57458804e99f73d427214442a6b10a53856
   RNGestureHandler: 4cb47a93019c1a201df2644413a0a1569a51c8aa
   RNReanimated: 6abbbae2e5e72609d85aabd92a982a94566885f1
@@ -410,6 +428,6 @@ SPEC CHECKSUMS:
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: 14927e37bd25376d216b150ab2a561773d57911f
 
-PODFILE CHECKSUM: 6e96727e17023854fa9fbea91b9c5431368da654
+PODFILE CHECKSUM: a9152951d50186d43956165d55891e9f9cd2de21
 
 COCOAPODS: 1.8.4

@@ -60,12 +60,12 @@ function Details(props) {
       <View
         style={{flex: 1, padding: 20}}>
         <Text
-          style={{fontSize: 24, flex: 4}}>
+          style={{fontSize: 18, flex: 4}}>
             {/* Reported by a user 2 days ago{'\n'}
             You were 10 meters away on January 24, 2020 */}
             You were about 10 meters away from someone with {props.navigation.getParam('virus').title} on January 24, 2020. Someone reported this 2 days ago.
         </Text>
-        <Text style={{fontSize:24, textDecorationLine: "underline", flex: 1, justifyContent: 'flex-end'}} onPress={() => {
+        <Text style={{fontSize:18, textDecorationLine: "underline", flex: 1, justifyContent: 'flex-end'}} onPress={() => {
           Linking.openURL("https://google.com")
         }}>Learn more about {props.navigation.getParam('virus').title}</Text>
       </View>

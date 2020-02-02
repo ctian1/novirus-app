@@ -20,6 +20,7 @@
 		5E42EFC73C8FD8DAEBDAB15E /* libPods-NovirusTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D284C86D1660EF66DDC144 /* libPods-NovirusTests.a */; };
 		6B413B38C39D8871D623A0BD /* libPods-Novirus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B308A6C4F081D366BCF4B03 /* libPods-Novirus.a */; };
 		7BF64FCF5F90010994FD6098 /* libPods-Novirus-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF00D483387F561566FD4C78 /* libPods-Novirus-tvOS.a */; };
+		9072B13723E6A62F00B65120 /* RNBackgroundFetch+AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9072B13623E6A62F00B65120 /* RNBackgroundFetch+AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		708B2B7E781F22B70F28FC99 /* Pods-Novirus-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Novirus-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Novirus-tvOSTests/Pods-Novirus-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74700CACBEC20A13DA5E7773 /* Pods-Novirus-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Novirus-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Novirus-tvOS/Pods-Novirus-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		903DEE66816F4CA2BF6265F0 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		9072B13623E6A62F00B65120 /* RNBackgroundFetch+AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RNBackgroundFetch+AppDelegate.m"; path = "../node_modules/react-native-background-fetch/ios/RNBackgroundFetch/RNBackgroundFetch+AppDelegate.m"; sourceTree = "<group>"; };
 		99B009CB335D437288C9D6AC /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		A207DD2798B84C5C8B2D5F9B /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		AFDE1CAC83174AE9AE23ADB7 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		13B07FAE1A68108700A75B9A /* Novirus */ = {
 			isa = PBXGroup;
 			children = (
+				9072B13623E6A62F00B65120 /* RNBackgroundFetch+AppDelegate.m */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -619,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9072B13723E6A62F00B65120 /* RNBackgroundFetch+AppDelegate.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);

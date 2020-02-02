@@ -5,6 +5,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import Profile from '../Profile';
 import Home from '../Home';
+import Report from '../Report';
 import Details from '../Details';
 
 import homeIcon from 'assets/ic_home/ic_home.png';
@@ -40,9 +41,11 @@ const TabIcon = ({ icon, tintColor }) => (// eslint-disable-line
 
 const ProfileStack = createStackNavigator({ Profile });
 const HomeStack = createStackNavigator({ Home, Details });
+const ReportStack = createStackNavigator({ Report });
 const AppStack = createBottomTabNavigator(
   {
     Home: HomeStack,
+    Report: ReportStack,
     Profile: ProfileStack,
   },
   {
