@@ -63,20 +63,21 @@ function Details(props) {
           style={{fontSize: 24, flex: 4}}>
             {/* Reported by a user 2 days ago{'\n'}
             You were 10 meters away on January 24, 2020 */}
-            You were about 10 meters away from someone with influenza on January 24, 2020. Someone reported this 2 days ago.
+            You were about 10 meters away from someone with {props.navigation.getParam('virus').title} on January 24, 2020. Someone reported this 2 days ago.
         </Text>
         <Text style={{fontSize:24, textDecorationLine: "underline", flex: 1, justifyContent: 'flex-end'}} onPress={() => {
           Linking.openURL("https://google.com")
-        }}>Learn more about Influenza</Text>
+        }}>Learn more about {props.navigation.getParam('virus').title}</Text>
       </View>
     </View>
     // </ScrollView>
   );
 }
 
-Details.navigationOptions = {
-  title: 'Novirus',
-};
+Details.navigationOptions = ({ navigation }) => ({
+  // title: navigation.state.params.name,
+  title: typeof(navigation)==='undefined' || typeof(navigation.state)==='undefined' || typeof(navigation.state.params)==='undefined' || typeof(navigation.state.params.virus) === 'undefined' ? 'Novirus': navigation.state.params.virus.title,
+});
 
 Details.propTypes = {
   navigation: PropTypes.object.isRequired,

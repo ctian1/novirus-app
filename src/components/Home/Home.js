@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -17,12 +17,58 @@ import getUser from 'selectors/UserSelectors';
 import { ScrollView } from 'react-native-gesture-handler';
 
 function Home(props) {
+
+  const [viruses, setViruses] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+
+  const [cards, setCards] = useState([]);
+
   const user = useSelector(state => getUser(state));
-  const getMessage = useCallback(() => `${strings.homeMessage} ${user && user.name}`, [user]);
+
+  useEffect(() => {
+    if (!loaded) {
+      setLoaded(true);
+
+      setViruses([
+        {
+          map: require('../../images/chipotle.png'),
+          title: "Influenza",
+          description: "Possible contact 3 days ago",
+        },
+        {
+          map: require('../../images/canes.png'),
+          title: "Coronavirus",
+          description: "Possible contact 6 days ago",
+        },
+      ])
+    }
+  });
+
+  useEffect(() => {
+    const result = [];
+    for (const virus of viruses) {
+      result.push(
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate('Details', {virus})
+        }}>
+        <Card
+          // title='Influenza'
+          image={virus.map}>
+          <Text style={{fontSize: 18, fontWeight: '600', marginBottom:5}}>{virus.title}</Text>
+          <Text>{virus.description}</Text>
+        </Card>
+      </TouchableOpacity>);
+    }
+    setCards(result);
+  }, [viruses])
 
   return (
     <ScrollView style={styles.container}>
-      <TouchableOpacity
+      {cards}
+
+
+      {/* <TouchableOpacity
         onPress={() => {
           props.navigation.navigate('Details')
         }}>
@@ -37,8 +83,10 @@ function Home(props) {
         // title='Influenza'
         image={require('../../images/canes.png')}>
         <Text style={{fontSize: 18, fontWeight: '600', marginBottom:5}}>Coronavirus</Text>
-        <Text>Possible contact 3 days ago</Text>
-      </Card>
+        <Text>Possible contact 6 days ago</Text>
+      </Card> */}
+
+
       {/* <Text style={TextStyles.lightTitle}>
         {strings.home}
       </Text>
@@ -49,10 +97,11 @@ function Home(props) {
   );
 }
 
-Home.navigationOptions = {
-  title: 'Novirus',
-  headerBackTitle: 'Back'
-};
+Home.navigationOptions = ({ navigation }) => ({
+    // title: typeof(navigation),
+    title: typeof(navigation)==='undefined' || typeof(navigation.state)==='undefined' || typeof(navigation.state.params)==='undefined' || typeof(navigation.state.params.virus) === 'undefined' ? 'Novirus': navigation.state.params.virus.title,
+    headerBackTitle: 'Back'
+});
 
 Home.propTypes = {
   navigation: PropTypes.object.isRequired,
