@@ -92,6 +92,7 @@ function Report(props) {
           placeholder={"mm/dd/yyyy"}
           maxLength={10}
           value={date}
+          keyboardType={"numbers-and-punctuation"}
           onChangeText={(text) => {
             setDate(text);
           }}/>
@@ -101,7 +102,7 @@ function Report(props) {
         <TextInput
           {...props} // Inherit any props passed to it; e.g., multiline, numberOfLines below
           editable
-          enablesReturnKeyAutomatically={true}
+          // enablesReturnKeyAutomatically={true}
           textAlignVertical={'top'}
           multiline={true}
           numberOfLines={6}

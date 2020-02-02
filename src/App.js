@@ -9,6 +9,8 @@ import { store, persist } from './reducers';
 
 // MapboxGL.setAccessToken("sk.eyJ1IjoiY3RpYW4xIiwiYSI6ImNrNjNmM3RvMDA1bzkzbmx3emlreHYzaWQifQ.WcM2--jYUE1eHlj9UtXMTA");
 
+console.disableYellowBox = true;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.red,
+    paddingBottom: 30
   },
   formContainer: {
     alignSelf: 'stretch',

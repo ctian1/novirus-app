@@ -71,7 +71,7 @@ function Details(props) {
             You were about {props.navigation.getParam('virus').distance} meters away from someone with {props.navigation.getParam('virus').disease} on {moment.unix(props.navigation.getParam('virus').time_met).format("MMMM Do YYYY")}. Someone reported this {moment.unix(props.navigation.getParam('virus').time_reported).fromNow()}.
         </Text>
         <Text style={{fontSize:18, textDecorationLine: "underline", flex: 1, justifyContent: 'flex-end'}} onPress={() => {
-          Linking.openURL("https://google.com")
+          Linking.openURL(props.navigation.getParam('virus').disease == 'influenza' ? "https://www.cdc.gov/flu/index.htm" : "https://www.cdc.gov/coronavirus/2019-ncov/index.html")
         }}>Learn more about {props.navigation.getParam('virus').disease}</Text>
       </View>
     </View>

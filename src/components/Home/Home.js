@@ -4,6 +4,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  RefreshControl,
 } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { useSelector } from 'react-redux';
@@ -18,12 +19,42 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Colors from 'helpers/Colors';
 import MapView, { Marker } from 'react-native-maps';
 import moment from 'moment';
+import axios from 'axios';
+import Url from '../../helpers/Url';
 
 function titleCase(str) {
   return (str.charAt(0).toUpperCase() + str.slice(1));
 }
 
 function Home(props) {
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    axios.get(`${Url}/refresh`, {
+      params: {
+        id: user.id
+      },
+      method: 'GET'
+    }).then((result) => {
+      console.log("!!!!");
+      console.log(result.data);
+      if(result.status !== 200) {
+        setRefreshing(false);
+        return
+      }
+      if ('error' in result.data) {
+        setRefreshing(false);
+        return
+      }
+      setViruses(result.data)
+      setRefreshing(false);
+      // Data is the object exposes by axios for the response json
+    }).catch((error) => {
+      console.log(error);
+      setRefreshing(false);
+    });
+  }, [refreshing]);
 
   const [viruses, setViruses] = useState([]);
   const [loaded, setLoaded] = useState(false);
@@ -61,7 +92,7 @@ function Home(props) {
 
   useEffect(() => {
     const result = [];
-    for (const virus of viruses) {
+    for (const virus of viruses.sort((a, b) => a.time_met < b.time_met)) {
       console.log(virus);
       result.push(
       <TouchableOpacity
@@ -100,7 +131,8 @@ function Home(props) {
   }, [viruses])
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} refreshControl={
+    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
       {cards.length > 0 ? cards : <Text style={{flex:1, textAlign: "center", fontSize: 20, margin: 45, textAlignVertical: "center"}}>
         No reports of contagious disease near you
       </Text>}
