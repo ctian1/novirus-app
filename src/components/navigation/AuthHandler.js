@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import getUser from 'selectors/UserSelectors';
 import Colors from 'helpers/Colors';
 import BackgroundGeolocation from "react-native-background-geolocation";
+import Url from '../../helpers/Url';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,7 +23,7 @@ function AuthHandler(props) {
   const user = useSelector(state => getUser(state));
 
   useEffect(() => {
-    if (user !== null) {
+    if (user !== null && user !== undefined) {
       props.navigation.navigate('App');
       BackgroundGeolocation.ready({
         // Geolocation Config
@@ -30,6 +31,7 @@ function AuthHandler(props) {
         distanceFilter: 0,
         // Activity Recognition
         stationaryRadius: 0,
+        autoSyncThreshold: 40,
         preventSuspend: true,
         stopTimeout: 5,
         // Application config
@@ -38,7 +40,7 @@ function AuthHandler(props) {
         stopOnTerminate: false,   // <-- Allow the background-service to continue tracking when user closes the app.
         startOnBoot: true,        // <-- Auto start tracking when device is powered-up.
         // HTTP / SQLite config
-        url: 'http://1be3398f.ngrok.io/',
+        url: Url + '/track',
         batchSync: false,       // <-- [Default: false] Set true to sync locations to server in a single HTTP request.
         autoSync: true,         // <-- [Default: true] Set true to sync each location to server as it arrives.
         autoSyncThreshold: 60,
@@ -47,7 +49,7 @@ function AuthHandler(props) {
           "X-FOO": "bar"
         },
         params: {               // <-- Optional HTTP params
-          "auth_token": user.name
+          "auth_token": user === undefined ? 'error' : user.id
         }
       }, (state) => {
         console.log("- BackgroundGeolocation is configured and ready: ", state.enabled);

@@ -36,7 +36,7 @@ export const login = (email, password) => async (dispatch) => {
   }
 };
 
-export const logout = () => (dispatch) => {
-  UserController.logout();
+export const logout = (id) => (dispatch) => {
+  UserController.logout(id);
   dispatch(logoutRequest());
 };

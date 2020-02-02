@@ -16,6 +16,12 @@ import strings from 'localization';
 import getUser from 'selectors/UserSelectors';
 import { ScrollView } from 'react-native-gesture-handler';
 import Colors from 'helpers/Colors';
+import MapView, { Marker } from 'react-native-maps';
+import moment from 'moment';
+
+function titleCase(str) {
+  return (str.charAt(0).toUpperCase() + str.slice(1));
+}
 
 function Home(props) {
 
@@ -26,39 +32,68 @@ function Home(props) {
 
   const user = useSelector(state => getUser(state));
 
-  useEffect(() => {
-    if (!loaded) {
-      setLoaded(true);
+  // useEffect(() => {
+  //   if (!loaded) {
+  //     setLoaded(true);
 
-      setViruses([
-        {
-          map: require('../../images/chipotle.png'),
-          title: "Influenza",
-          description: "Possible contact 3 days ago",
-        },
-        {
-          map: require('../../images/canes.png'),
-          title: "Coronavirus",
-          description: "Possible contact 6 days ago",
-        },
-      ])
+  //     setViruses([
+  //       {
+  //         map: require('../../images/chipotle.png'),
+  //         title: "Influenza",
+  //         description: "Possible contact 3 days ago",
+  //       },
+  //       {
+  //         map: require('../../images/canes.png'),
+  //         title: "Coronavirus",
+  //         description: "Possible contact 6 days ago",
+  //       },
+  //     ])
+  //   }
+  // });
+
+  useEffect(() => {
+    if (user !== undefined && user !== null && 'sick' in user) {
+      setViruses(user.sick);
+    } else {
+      setViruses([]);
     }
-  });
+  }, [user])
 
   useEffect(() => {
     const result = [];
     for (const virus of viruses) {
+      console.log(virus);
       result.push(
       <TouchableOpacity
+        style={{flex:1, borderColor: 'gray', borderWidth: 2, margin: 10}}
         onPress={() => {
           props.navigation.navigate('Details', {virus})
         }}>
-        <Card
+        <View
+          style={{flex:1}}
           // title='Influenza'
-          image={virus.map}>
-          <Text style={{fontSize: 18, fontWeight: '600', marginBottom:5}}>{virus.title}</Text>
-          <Text>{virus.description}</Text>
-        </Card>
+          // image={virus.map}
+          >
+          <View style={{flex: 3}}>
+            <MapView
+              pitchEnabled={false}
+              rotateEnabled={false}
+              scrollEnabled={false}
+              zoomEnabled={false}
+              style={{flex: 1, minWidth:100, minHeight:150}}
+              initialRegion={{
+                latitude: virus.coords[0],
+                longitude: virus.coords[1],
+                latitudeDelta: 0.004,
+                longitudeDelta: 0.004,
+                }}>
+            </MapView>
+          </View>
+          <View style={{flex:1}}>
+            <Text style={{margin: 12, fontSize: 18, fontWeight: '600', marginBottom:5}}>{titleCase(virus.disease)}</Text>
+            <Text style={{margin: 12, marginTop: 0}}>{"Possible contact " + moment.unix(virus.time_met).fromNow()}</Text>
+          </View>
+        </View>
       </TouchableOpacity>);
     }
     setCards(result);
@@ -66,7 +101,9 @@ function Home(props) {
 
   return (
     <ScrollView style={styles.container}>
-      {cards}
+      {cards.length > 0 ? cards : <Text style={{flex:1, textAlign: "center", fontSize: 20, margin: 45, textAlignVertical: "center"}}>
+        No reports of contagious disease near you
+      </Text>}
 
 
       {/* <TouchableOpacity
@@ -100,10 +137,10 @@ function Home(props) {
 
 Home.navigationOptions = ({ navigation }) => ({
     // title: typeof(navigation),
-    title: typeof(navigation)==='undefined' || typeof(navigation.state)==='undefined' || typeof(navigation.state.params)==='undefined' || typeof(navigation.state.params.virus) === 'undefined' ? 'Novirus': navigation.state.params.virus.title,
+    title: typeof(navigation)==='undefined' || typeof(navigation.state)==='undefined' || typeof(navigation.state.params)==='undefined' || typeof(navigation.state.params.virus) === 'undefined' ? 'Novirus': titleCase(navigation.state.params.virus.disease),
     headerBackTitle: 'Back',
     headerStyle: {paddingBottom: 12},
-    headerTitleStyle: {fontSize: 32, fontWeight: '700', color: Colors.primary}
+    headerTitleStyle: {fontSize: 32, fontWeight: '700', color: Colors.red}
 });
 
 Home.propTypes = {

@@ -17,6 +17,11 @@ import strings from 'localization';
 import getUser from 'selectors/UserSelectors';
 import { ScrollView } from 'react-native-gesture-handler';
 import MapView, { Marker } from 'react-native-maps';
+import moment from 'moment';
+
+function titleCase(str) {
+  return (str.charAt(0).toUpperCase() + str.slice(1));
+}
 
 function Details(props) {
   const user = useSelector(state => getUser(state));
@@ -46,15 +51,15 @@ function Details(props) {
       <MapView
         style={{flex: 1}}
         initialRegion={{
-          latitude: 33.6497028,
-          longitude: -117.8395963,
+          latitude: props.navigation.getParam('virus').coords[0],
+          longitude: props.navigation.getParam('virus').coords[1],
           latitudeDelta: 0.004,
           longitudeDelta: 0.004,
           }}>
         <Marker
           coordinate={{
-            latitude: 33.6497028,
-            longitude: -117.8395963,
+            latitude: props.navigation.getParam('virus').coords[0],
+            longitude: props.navigation.getParam('virus').coords[1],
             }}/>
       </MapView>
       <View
@@ -63,11 +68,11 @@ function Details(props) {
           style={{fontSize: 18, flex: 4}}>
             {/* Reported by a user 2 days ago{'\n'}
             You were 10 meters away on January 24, 2020 */}
-            You were about 10 meters away from someone with {props.navigation.getParam('virus').title} on January 24, 2020. Someone reported this 2 days ago.
+            You were about {props.navigation.getParam('virus').distance} meters away from someone with {props.navigation.getParam('virus').disease} on {moment.unix(props.navigation.getParam('virus').time_met).format("MMMM Do YYYY")}. Someone reported this {moment.unix(props.navigation.getParam('virus').time_reported).fromNow()}.
         </Text>
         <Text style={{fontSize:18, textDecorationLine: "underline", flex: 1, justifyContent: 'flex-end'}} onPress={() => {
           Linking.openURL("https://google.com")
-        }}>Learn more about {props.navigation.getParam('virus').title}</Text>
+        }}>Learn more about {props.navigation.getParam('virus').disease}</Text>
       </View>
     </View>
     // </ScrollView>
@@ -76,7 +81,7 @@ function Details(props) {
 
 Details.navigationOptions = ({ navigation }) => ({
   // title: navigation.state.params.name,
-  title: typeof(navigation)==='undefined' || typeof(navigation.state)==='undefined' || typeof(navigation.state.params)==='undefined' || typeof(navigation.state.params.virus) === 'undefined' ? 'Novirus': navigation.state.params.virus.title,
+  title: typeof(navigation)==='undefined' || typeof(navigation.state)==='undefined' || typeof(navigation.state.params)==='undefined' || typeof(navigation.state.params.virus) === 'undefined' ? 'Novirus': titleCase(navigation.state.params.virus.disease),
 });
 
 Details.propTypes = {

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   fieldTitle: {
     fontSize: 16,
     fontWeight: '700',
-    color: Colors.primary,
+    color: Colors.red,
   },
   error: {
     fontSize: 14,

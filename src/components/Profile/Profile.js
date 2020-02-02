@@ -10,6 +10,7 @@ import Button from '../common/Button';
 import styles from './styles';
 
 import strings from 'localization';
+import Colors from 'helpers/Colors';
 import TextStyles from 'helpers/TextStyles';
 import { logout } from 'actions/UserActions';
 import getUser from 'selectors/UserSelectors';
@@ -17,7 +18,7 @@ import getUser from 'selectors/UserSelectors';
 function Profile(props) {
   const user = useSelector(state => getUser(state));
   const dispatch = useDispatch();
-  const logoutUser = useCallback(() => dispatch(logout()), [dispatch]);
+  const logoutUser = useCallback(() => dispatch(logout(user.id)), [dispatch]);
 
   useEffect(() => {
     if (user === null) {
@@ -29,9 +30,10 @@ function Profile(props) {
     <View style={styles.container}>
       <Text style={TextStyles.fieldTitle}> {strings.profile} </Text>
       <Text>
-        {user.name}
+        {user !== null && user !== undefined ? user.name : ''}
       </Text>
       <Button
+        style={{borderColor: Colors.red}}
         title={strings.logout}
         onPress={logoutUser}
       />

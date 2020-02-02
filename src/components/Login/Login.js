@@ -44,10 +44,10 @@ function Login(props) {
       <Text style={{fontSize:36, color:Colors.white, marginBottom: 10, fontWeight: "700"}}>Novirus</Text>
       <View style={[styles.formContainer, ShadowStyles.shadow]}>
         <Text style={TextStyles.fieldTitle}>
-          {strings.email}
+          {"Username"}
         </Text>
         <TextField
-          placeholder={strings.email}
+          placeholder={"Username"}
           onChangeText={emailChanged}
           value={email}
         />
@@ -64,6 +64,9 @@ function Login(props) {
         <Button
           onPress={loginUser}
           title={isLoading ? strings.loading : strings.login}
+          style={{
+            borderColor: Colors.red
+          }}
         />
       </View>
     </View>
