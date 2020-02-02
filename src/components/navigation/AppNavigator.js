@@ -8,25 +8,34 @@ import Home from '../Home';
 import Details from '../Details';
 
 import homeIcon from 'assets/ic_home/ic_home.png';
+// import { mdiThermometerAlert } from '@mdi/js';
+import { Icon } from 'react-native-elements'
 import settingsIcon from 'assets/ic_settings/ic_settings.png';
 import Colors from 'helpers/Colors';
 
 const iconForTab = ({ state }) => {
   switch (state.routeName) {
     case 'Home':
-      return homeIcon;
+      return 'map-outline';
+    case 'Report':
+      return 'thermometer-alert';
     case 'Profile':
-      return settingsIcon;
+      return 'account';
     default:
       return null;
   }
 };
 
 const TabIcon = ({ icon, tintColor }) => (// eslint-disable-line
-  <Image
-    source={icon}
-    style={{ tintColor }}
-  />
+  // <Image
+  //   source={icon}
+  //   style={{ tintColor }}
+  // />
+  <Icon
+    type={"material-community"}
+    name={icon}
+    size={30}
+    color={tintColor}/>
 );
 
 const ProfileStack = createStackNavigator({ Profile });

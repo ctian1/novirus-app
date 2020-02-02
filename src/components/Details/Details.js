@@ -4,6 +4,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  Linking,
 } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { useSelector } from 'react-redux';
@@ -57,8 +58,16 @@ function Details(props) {
             }}/>
       </MapView>
       <View
-        style={{flex: 1}}>
-        <Text>You have died</Text>
+        style={{flex: 1, padding: 20}}>
+        <Text
+          style={{fontSize: 24, flex: 4}}>
+            {/* Reported by a user 2 days ago{'\n'}
+            You were 10 meters away on January 24, 2020 */}
+            You were about 10 meters away from someone with influenza on January 24, 2020. Someone reported this 2 days ago.
+        </Text>
+        <Text style={{fontSize:24, textDecorationLine: "underline", flex: 1, justifyContent: 'flex-end'}} onPress={() => {
+          Linking.openURL("https://google.com")
+        }}>Learn more about Influenza</Text>
       </View>
     </View>
     // </ScrollView>

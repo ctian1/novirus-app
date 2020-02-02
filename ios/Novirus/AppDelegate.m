@@ -10,14 +10,14 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import <GoogleMaps/GoogleMaps.h>
+//#import <GoogleMaps/GoogleMaps.h>
 //#import <RadarSDK/RadarSDK.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [GMSServices provideAPIKey:@"AIzaSyDwibD6BEACzMq-P8h-atu8pj5GU0IE0GI"];
+//  [GMSServices provideAPIKey:@"AIzaSyDwibD6BEACzMq-P8h-atu8pj5GU0IE0GI"];
 //  [Radar initializeWithPublishableKey:@"prj_live_pk_f57152e8ffe06d1f1084695c2d1073ff6e6ee186"];
   
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];

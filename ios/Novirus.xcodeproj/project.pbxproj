@@ -44,6 +44,7 @@
 		00E356EE1AD99517003FC87E /* NovirusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovirusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* NovirusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NovirusTests.m; sourceTree = "<group>"; };
+		085AEDA05DE341D5AD9FF7F8 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		0E5517633609AC03607C8B6D /* Pods-NovirusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovirusTests.release.xcconfig"; path = "Target Support Files/Pods-NovirusTests/Pods-NovirusTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Novirus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Novirus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Novirus/AppDelegate.h; sourceTree = "<group>"; };
@@ -53,19 +54,34 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Novirus/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Novirus/main.m; sourceTree = "<group>"; };
 		258CC3BB71EACA175435DE94 /* Pods-Novirus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Novirus.debug.xcconfig"; path = "Target Support Files/Pods-Novirus/Pods-Novirus.debug.xcconfig"; sourceTree = "<group>"; };
+		29546E7E369D4EA4B9BB5C3F /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		29D284C86D1660EF66DDC144 /* libPods-NovirusTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NovirusTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* Novirus-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Novirus-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Novirus-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Novirus-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B3BBDD4B1F08AE92C17D9E /* libPods-Novirus-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Novirus-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B308A6C4F081D366BCF4B03 /* libPods-Novirus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Novirus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E196053C48B47BCBA5C1870 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		560467A68F38F200C509A865 /* Pods-Novirus-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Novirus-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Novirus-tvOSTests/Pods-Novirus-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		560FC9FF4A9E4DB9AF8DC5A1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		677937EB15A9C2257F83D6FA /* Pods-Novirus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Novirus.release.xcconfig"; path = "Target Support Files/Pods-Novirus/Pods-Novirus.release.xcconfig"; sourceTree = "<group>"; };
+		697159CF6B1B4FC2ACA1F1E7 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		708B2B7E781F22B70F28FC99 /* Pods-Novirus-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Novirus-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Novirus-tvOSTests/Pods-Novirus-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74700CACBEC20A13DA5E7773 /* Pods-Novirus-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Novirus-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Novirus-tvOS/Pods-Novirus-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		903DEE66816F4CA2BF6265F0 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		99B009CB335D437288C9D6AC /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		A207DD2798B84C5C8B2D5F9B /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		AFDE1CAC83174AE9AE23ADB7 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		C29D8A7F48EB446EB9DA208E /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		C4E1700031EE4C22969AC0C2 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		C5A583CB09354946A598DBF5 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		D5F5D40CEDCD418E86AC638B /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		DED8DB7B01C9D6EC09DD9827 /* Pods-Novirus-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Novirus-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Novirus-tvOS/Pods-Novirus-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		E67C35BDDA404EB49DD0450C /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		EA2E5EA43D1E45C101A16EB2 /* Pods-NovirusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovirusTests.debug.xcconfig"; path = "Target Support Files/Pods-NovirusTests/Pods-NovirusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F66B5D5E132D4AFFBF82C548 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		F9C2D1F5A3D24CF499976099 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		FF00D483387F561566FD4C78 /* libPods-Novirus-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Novirus-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -149,6 +165,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		372464095C054CB3B20F849C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				99B009CB335D437288C9D6AC /* AntDesign.ttf */,
+				A207DD2798B84C5C8B2D5F9B /* Entypo.ttf */,
+				C4E1700031EE4C22969AC0C2 /* EvilIcons.ttf */,
+				C5A583CB09354946A598DBF5 /* Feather.ttf */,
+				697159CF6B1B4FC2ACA1F1E7 /* FontAwesome.ttf */,
+				D5F5D40CEDCD418E86AC638B /* FontAwesome5_Brands.ttf */,
+				4E196053C48B47BCBA5C1870 /* FontAwesome5_Regular.ttf */,
+				903DEE66816F4CA2BF6265F0 /* FontAwesome5_Solid.ttf */,
+				29546E7E369D4EA4B9BB5C3F /* Fontisto.ttf */,
+				085AEDA05DE341D5AD9FF7F8 /* Foundation.ttf */,
+				F66B5D5E132D4AFFBF82C548 /* Ionicons.ttf */,
+				F9C2D1F5A3D24CF499976099 /* MaterialCommunityIcons.ttf */,
+				E67C35BDDA404EB49DD0450C /* MaterialIcons.ttf */,
+				C29D8A7F48EB446EB9DA208E /* Octicons.ttf */,
+				560FC9FF4A9E4DB9AF8DC5A1 /* SimpleLineIcons.ttf */,
+				AFDE1CAC83174AE9AE23ADB7 /* Zocial.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		7F96445D4E518E57EA59E7D3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +219,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				7F96445D4E518E57EA59E7D3 /* Pods */,
+				372464095C054CB3B20F849C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -285,7 +325,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -412,7 +452,7 @@
 		};
 		460035CB7B57DFD18D349E44 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (

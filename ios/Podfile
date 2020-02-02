@@ -47,6 +47,9 @@ target 'Novirus' do
 #  # Make also sure you have use_frameworks! enabled
 #  use_frameworks!
 
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'NovirusTests' do
     inherit! :search_paths
     # Pods for testing
